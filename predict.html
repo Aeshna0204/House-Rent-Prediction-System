@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            .left{
+             margin-left: 50%;
+             padding-left: 10%;
+            }
+            nav {
+         box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+       }
+       .rs{
+        font-weight: 500;
+        color: darkslategray;
+        margin-right: 1%;
+       }
+       .card{
+         padding-left: 5%;
+         padding-right:5%;
+         padding-bottom: 1%;
+         padding-top: 2%;
+       }
+       .num{
+        font-size:45px;
+        font-weight: 500;
+        color:darkslateblue;
+        margin-left: 25%;
+       }
+       .ab{
+        margin-left: 1%;
+        border-radius: 5px;
+       }
+           </style>
+</head>
+
+<body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <img src="../static/img/logo (2).png" style="width:60px ">
+          <a class="navbar-brand text-info" style="margin-left: 15px;font-weight: 500;" href="/">HomeWiz</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse left" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li class="nav-item ">
+                <a class="nav-link active text-info"  style="font-weight: 500;" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link text-info"  style="font-weight: 500;"href="#">About Project</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-info"style="font-weight: 500;" href="#">About Developers</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <br>
+    <!-- nav bar end -->
+    
+    <div class="container my-3">
+        <div class="card" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2)">
+            Predicted Objects <br><br>
+        <div class="row" style="margin-top: 2%;">
+            <div class="col-lg-1" ></div>
+                <div class="col-lg-3 border ab" >
+                 Kitchen Image:
+                 
+                <ul class="num" >{{countk}}</ul>
+                {%for li in li1%}
+                <ul >{{li}}</ul>
+                {%endfor%}
+
+            </div>
+            <div class="col-lg-3 border ab">
+               Hall Image:
+               <ul class="num" >{{counth}}</ul>
+                {%for li in li2%}
+                <ul class="num1">{{li}}</ul>
+                {%endfor%}
+            
+            </div>
+            <div class="col-lg-3 border ab">
+                Bedroom Image:
+                <ul class="num" >{{countb}}</ul>
+                {%for li in li3%}
+                <ul class="num1">{{li}}</ul>
+                {%endfor%}
+               
+            </div>
+            
+            <b><p style="margin-top: 2%;">Total furniture is: {{total_furniture}} </p></b>
+        </div>
+        <hr>
+        <!-- <div class="row">
+            <div class="col-4">
+                Swimming Pool : {{swimming_pool}}
+            </div>
+            <div class="col-4">
+                Elevator : {{lift}}
+            </div>
+            <div class="col-4">
+                GYM : {{gym}}
+            </div>
+        </div> -->
+        <div class="card" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);width:75%;margin-left: 10%;">
+        <div class="col-lg-4" >
+   
+       </div>
+       <div class="col-lg-5">
+        Predicted House Rent :
+           <ul class="num" ><span class="rs">₹</span>{{prediction}}</ul>
+     
+
+       </div>
+       <div class="col-lg-3">
+          
+       </div>
+        </div>
+
+    </div></div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
